@@ -1,4 +1,0 @@
-[build]
-  publish = "prototype"
-
-# Static HTML/CSS/JS; no build command required.
