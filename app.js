@@ -16,7 +16,7 @@ for (const id of ['booking-link','fallback-link']) { $(id).href = config.booking
 function setMode(widget) { $('link-panel').hidden=widget; $('widget-panel').hidden=!widget; $('link-mode').setAttribute('aria-pressed',String(!widget)); $('widget-mode').setAttribute('aria-pressed',String(widget)); }
 $('link-mode').addEventListener('click',()=>setMode(false));
 $('widget-mode').addEventListener('click',()=>setMode(true));
-if(config.widgetEnabled) { $('widget-placeholder').hidden=true; $('widget-frame').hidden=false; $('widget-frame').src='widget.html'; }
+if(config.widgetEnabled) { $('widget-placeholder').hidden=true; $('widget-mount').hidden=false; setMode(true); }
 $('copy-code').addEventListener('click', async () => {
   try { await navigator.clipboard.writeText($('copy-code').dataset.code); $('copy-status').textContent='Пример кода скопирован. Он не даёт скидку.'; track('partner_code_copy',{partner_id:'demo-specialist',demo:true}); }
   catch { $('copy-status').textContent='Не удалось скопировать. Пример кода: DEMO-CODE'; }
